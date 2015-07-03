@@ -59,8 +59,9 @@ bind_rows(dataJ, dataO) %>%
                       titlevar="Event", 
                       annotationvar="PlusMinus",
                       options=list(
-                        width=600, height=350,
-                        fill=10, displayExactValues=TRUE,
+                        gvis.editor = "Change type of the graph",
+                        width=1000, height=500,
+                        fill=1, displayExactValues=TRUE,
                         colors="['#0000ff','#00ff00']")
                       ) %>%
     return
