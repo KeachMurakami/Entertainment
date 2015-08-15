@@ -10,15 +10,11 @@ shinyUI(pageWithSidebar(
   sidebarPanel(
     selectInput("Vars", label = "Choose the Parameter", selected = "Weight",
                 choices = c("Weight" = "Weight", "Body Fat" = "BodyFat")),
-    selectInput("Labels", label = "Choose the inset comment type", selected = "PLUSorMINUS",
-                choices = c("Good day? or Bad day?" = "PLUSorMINUS", "Causes" = "Event")),
-    sliderInput("smoothing", label = "smoothing var", value = 5,
-                min = 1, max = 100),
-    tags$hr()
-#    submitButton()
+    tags$hr(),
+    submitButton()
   ),
   mainPanel(
-    plotOutput("scat")
+    htmlOutput("scat")
     #    showOutput("scat", "polycharts")
   )
 ))
