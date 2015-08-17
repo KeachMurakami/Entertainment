@@ -6,19 +6,22 @@ library(googleVis)
 
 shinyUI(pageWithSidebar(
 
-  headerPanel("Diet Derby"),
+  headerPanel("Diet Derby in 環境研"),
   sidebarPanel(
-    selectInput("Vars", label = "Choose the Parameter", selected = "Weight",
-                choices = c("Weight" = "Weight", "Body Fat" = "BodyFat")),
-    selectInput("Labels", label = "Choose the inset comment type", selected = "PLUSorMINUS",
-                choices = c("Good day? or Bad day?" = "PLUSorMINUS", "Causes" = "Event")),
-    sliderInput("smoothing", label = "smoothing var", value = 5,
+    selectInput("Vars", label = "パラメータ", selected = "Weight",
+                choices = c("体重" = "Weight", "体脂肪率" = "BodyFat")),
+    selectInput("Labels", label = "ラベルを表示", selected = "PLUSorMINUS",
+                choices = c("がんばったorさぼった" = "PLUSorMINUS", "勝因or敗因" = "Event")),
+     sliderInput("Targets", label = "目標体重", value = 63,
+                 min = 60, max = 70, step = 0.1),
+    sliderInput("Smoothing", label = "スムージングします", value = 5,
                 min = 1, max = 100),
     tags$hr()
 #    submitButton()
   ),
   mainPanel(
-    plotOutput("scat")
-    #    showOutput("scat", "polycharts")
+    plotOutput("scat"),
+    p("線形回帰するとこんな感じです"),
+    tableOutput("message")
   )
 ))
