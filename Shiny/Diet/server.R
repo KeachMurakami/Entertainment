@@ -31,7 +31,7 @@ shinyServer(function(input, output) {
       filter(variable == input$Labels) %>%
       na.omit %>%
       mutate(Date = as.Date(paste0("20", Date)),
-             y_pos = y_pos)
+             y_pos = input$Targets + 0.5)
     
     handled <-
       handling %>%
@@ -48,6 +48,7 @@ shinyServer(function(input, output) {
       geom_text(data = labeldata, aes(y = y_pos, label = value), angle = 90)
   })
   
+  output$URLlink <- renderText({'<a href = "https://github.com/KeachMurakami/Entertainment/tree/master/Shiny/Diet">コードなど@GitHub</a>'})
   output$message <- renderTable({
     handling <-
       Rawdata %>%

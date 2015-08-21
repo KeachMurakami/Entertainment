@@ -20,6 +20,7 @@ shinyUI(pageWithSidebar(
 #    submitButton()
   ),
   mainPanel(
+    htmlOutput("URLlink"),
     plotOutput("scat"),
     p("線形回帰するとこんな感じです"),
     tableOutput("message")
