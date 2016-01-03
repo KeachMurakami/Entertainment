@@ -3,7 +3,11 @@
 
 # Overview
 研究室のOくんとJさんがダイエットを始めたので。
+<<<<<<< HEAD
 [経過観察](https://keach2015.shinyapps.io/Diet)
+=======
+[経過観察](https://keach.shinyapps.io/Diet)
+>>>>>>> origin/master
 
 # Future Prospect
 - コードの整理と汎用化
