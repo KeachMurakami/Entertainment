@@ -4,3 +4,5 @@ Shiny/Diet/.httr-oauth
 Shiny/DietDerby/.httr-oauth
 
 *.dcf
+
+*.txt
